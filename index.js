@@ -14,7 +14,7 @@ class Config{
   }
 
   merge(config){
-    this.CONFIG = merge(this.CONFIG, config);
+    this.CONFIG = merge(this.CONFIG, (config instanceof Config)?config.toJS():config);
   }
 
   prefixKey(key){
@@ -28,7 +28,7 @@ class Config{
   }
 
   toJS(){
-    return this.CONFIG;
+    return this.baseKey?getObjectValue(keyToPath(this.baseKey), this.CONFIG):this.CONFIG;
   }
 
   get(key, defaultValue){
