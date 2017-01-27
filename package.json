@@ -1,0 +1,18 @@
+{
+  "name": "hathor-config",
+  "version": "0.0.1",
+  "description": "The base configuration class for Hathor configuration providers.",
+  "main": "index.js",
+  "scripts": {
+    "test": "lab"
+  },
+  "author": "Jeremy Darling <jeremy.darling@gmail.com>",
+  "license": "ISC",
+  "dependencies": {
+    "hathor-utils": "0.0.2"
+  },
+  "devDependencies": {
+    "code": "^4.0.0",
+    "lab": "^12.1.0"
+  }
+}
