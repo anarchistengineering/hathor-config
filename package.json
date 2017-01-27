@@ -1,6 +1,6 @@
 {
   "name": "hathor-config",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "The base configuration class for Hathor configuration providers.",
   "main": "index.js",
   "scripts": {
