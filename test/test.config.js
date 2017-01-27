@@ -27,6 +27,13 @@ describe('Config', ()=>{
     return done();
   });
 
+  it('Should return the raw Array when value type is an Array', (done)=>{
+    const config = new Config({some: [1, 2, 3]});
+    const val = config.get('some');
+    expect(val).to.be.an.array().and.to.equal([1, 2, 3]);
+    return done();
+  });
+
   it('Should be able to set a configuration value', (done)=>{
     const config = new Config();
     const init = config.get('some');

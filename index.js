@@ -4,7 +4,8 @@ const {
   getObjectValue,
   setObjectValue,
   removeObjectValue,
-  keyToPath
+  keyToPath,
+  typeOf
 } = require('hathor-utils');
 
 class Config{
@@ -34,7 +35,7 @@ class Config{
   get(key, defaultValue){
     const baseKey = this.prefixKey(key);
     const val = getObjectValue(keyToPath(baseKey), this.CONFIG, defaultValue);
-    return typeof(val)==='object'?new Config(this.CONFIG, {baseKey}):val;
+    return typeOf(val)==='object'?new Config(this.CONFIG, {baseKey}):val;
   }
 
   set(key, value){
