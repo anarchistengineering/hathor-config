@@ -15,7 +15,8 @@ class Config{
   }
 
   merge(config){
-    this.CONFIG = merge(this.CONFIG, (config instanceof Config)?config.toJS():config);
+    const hasToJS = config && (typeof(config.toJS) == 'function');
+    this.CONFIG = merge(this.CONFIG, hasToJS?config.toJS():config);
   }
 
   prefixKey(key){
